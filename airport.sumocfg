@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
     <input>
-        <net-file value="random_grid.net.xml"/>
+        <net-file value="airport.net.xml"/>
         <route-files value="routes.xml"/>
     </input>
     <time>
