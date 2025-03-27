@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+    <!-- Define a vehicle type for the GSE -->
+    <vType id="gse" accel="1.0" decel="4.5" length="4.0" maxSpeed="15.0" color="1,0,0"/>
+
+    <!-- Define a route using the edge IDs from your network -->
+    <route id="r1" edges="1_0 1_5 1024_1"/>
+
+    <!-- Define multiple vehicles with staggered departure times -->
+    <vehicle id="veh1" type="gse" route="r1" depart="0"/>
+    <vehicle id="veh2" type="gse" route="r1" depart="100"/>
+    <vehicle id="veh3" type="gse" route="r1" depart="200"/>
+</routes>
