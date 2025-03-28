@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vehicles>
+    <vehicle id="veh1" type="gse" route="route_Gate1_to_Cargo" depart="0" />
+    <vehicle id="veh2" type="gse" route="route_T1_to_Cargo_via_T2" depart="5" />
+    <vehicle id="veh3" type="gse" route="route_Gate2_to_Cargo" depart="10" />
+    <vehicle id="veh4" type="gse" route="route_Gate1_to_Exit" depart="15" />
+    <vehicle id="veh5" type="gse" route="route_T2_to_Gate2" depart="20" />
+    <vehicle id="veh6" type="gse" route="route_T1_to_Gate1" depart="25" />
+</vehicles>
