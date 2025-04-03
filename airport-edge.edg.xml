@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<edges>
-    <edge id="T1_G1" from="T1" to="Gate1" />
-    <edge id="T1_T2" from="T1" to="T2" />
-    <edge id="T2_G2" from="T2" to="Gate2" />
-    <edge id="G1_Cargo" from="Gate1" to="Cargo" />
-    <edge id="G2_Cargo" from="Gate2" to="Cargo" />
-    <edge id="T2_Exit" from="T2" to="Exit" />
-</edges>
