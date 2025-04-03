@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nodes>
+    <node id="T1" x="0" y="0" type="priority"/> <!-- Terminal 1 -->
+    <node id="T2" x="100" y="0" type="priority"/> <!-- Terminal 2 -->
+    <node id="Gate1" x="50" y="50" type="priority"/> <!-- Gate 1 -->
+    <node id="Gate2" x="150" y="50" type="priority"/> <!-- Gate 2 -->
+    <node id="Cargo" x="100" y="100" type="priority"/> <!-- Cargo Area -->
+    <node id="Exit" x="200" y="0" type="priority"/> <!-- Airport Exit -->
+</nodes>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<routes>
+    <!-- Route from Gate 1 to Cargo -->
+    <route id="route_Gate1_to_Cargo" edges=":Gate1_0 G1_Cargo" />
+    
+    <!-- Route from Gate 2 to Cargo -->
+    <route id="route_Gate2_to_Cargo" edges=":Gate2_0 G2_Cargo" />
+
+    <!-- Route from T1 to Gate 1 -->
+    <route id="route_T1_to_Gate1" edges="T1_G1" />
+    
+    <!-- Route from T1 to T2 -->
+    <route id="route_T1_to_T2" edges="T1_T2" />
+
+    <!-- Route from T2 to Exit -->
+    <route id="route_T2_to_Exit" edges="T2_Exit" />
+
+    <!-- Route from T2 to Gate 2 -->
+    <route id="route_T2_to_Gate2" edges="T2_G2" />
+
+    <!-- Example longer route from T1 to Cargo via T2 -->
+    <route id="route_T1_to_Cargo_via_T2" edges="T1_T2 T2_G2 G2_Cargo" />
+
+    <!-- Another longer route from Gate 1 to Exit -->
+    <route id="route_Gate1_to_Exit" edges=":Gate1_0 G1_Cargo T2_G2 T2_Exit" />
+
+    <route id="route_T1_to_Exit" edges="T1_T2 T2_Exit" />
+
+    <vType id="gse" accel="1.0" ecel="5.0" length="4.0" maxSpeed="20.0" sigma="0.5" />
+
+    <vehicle id="veh1" type="gse" route="route_Gate1_to_Cargo" depart="0" />
+    <vehicle id="veh2" type="gse" route="route_T1_to_Cargo_via_T2" depart="20" />
+    <vehicle id="veh3" type="gse" route="route_Gate2_to_Cargo" depart="15" />
+    <vehicle id="veh4" type="gse" route="route_T1_to_Exit" depart="30" />
+    <vehicle id="veh5" type="gse" route="route_T2_to_Gate2" depart="40" />
+    <vehicle id="veh6" type="gse" route="route_T1_to_Gate1" depart="0" />
+</routes>

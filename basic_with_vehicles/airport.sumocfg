@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <input>
+        <net-file value="airport.net.xml"/>
+        <route-files value="routes.xml"/>
+    </input>
+    <time>
+        <!-- Start simulation at time 0 and end at 1000 seconds -->
+        <begin value="0"/>
+        <end value="1000"/>
+    </time>
+</configuration>
