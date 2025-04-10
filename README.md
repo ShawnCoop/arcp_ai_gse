@@ -14,8 +14,4 @@ netconvert --osm-files map.osm -o seaTac.net.xml --geometry.remove --roundabouts
 - Edit the Map
 netedit seaTac.net.xml
 
-=======
-
-
 sumo-gui --net-file airport-net.net.xml --route-files routes.xml --delay 20
->>>>>>> 5517bd0a3c018f826affc177a9a6f14578904b01
