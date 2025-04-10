@@ -1,31 +1,42 @@
 import random
 import sumolib
 
-# Load SUMO network
-net = sumolib.net.readNet(".net.xml")
+# Load your SUMO network (replace with your actual filename)
+net = sumolib.net.readNet("seaTac.net.xml")
 
-# Define zones
-gates = ["edge_gate1", "edge_gate2", "edge_gate3"]
-baggage = ["edge_baggage"]
-fuel_depots = ["edge_fuel"]
-pushback_parking = ["edge_pushback"]
+# Terminal gate edges (from your data)
+terminal_edges = {
+    "A": ["1104889261", "1104889258", "1166079478", "1166079481"],
+    "B": ["1104927015", "1104927020", "1104927024", "1104927030"],
+    "S": ["437909059#1", "437909064#1", "437909065#1", "1104911633#2"]
+}
 
-# Function to pick a random edge from a zone
+# Temporary baggage edge (replace with real one once identified)
+baggage_edges = ["98374666#10"]
+
+# Helper: pick a random edge from a zone
 def pick_random(zone_list):
     return random.choice(zone_list)
 
-# Function to get shortest path between two edges
+# Helper: get shortest path route between two edges
 def get_shortest_path(net, start_edge_id, end_edge_id):
-    start = net.getEdge(start_edge_id)
-    end = net.getEdge(end_edge_id)
-    path = net.getShortestPath(start, end)
-    return [edge.getID() for edge in path[0]] if path else []
+    try:
+        start = net.getEdge(start_edge_id)
+        end = net.getEdge(end_edge_id)
+        path = net.getShortestPath(start, end)
+        return [edge.getID() for edge in path[0]] if path else []
+    except Exception as e:
+        print(f"Error generating path from {start_edge_id} to {end_edge_id}: {e}")
+        return []
 
-# Generate vehicle routes
+# Generate luggage tug vehicles going from baggage to random terminal gates
 vehicles = []
-for i in range(10):  # 10 luggage tugs as example
-    from_edge = pick_random(baggage)
-    to_edge = pick_random(gates)
+
+for i in range(15):
+    from_edge = pick_random(baggage_edges)
+    terminal_choice = pick_random(list(terminal_edges.keys()))
+    to_edge = pick_random(terminal_edges[terminal_choice])
+    
     route = get_shortest_path(net, from_edge, to_edge)
     
     if route:
@@ -35,7 +46,10 @@ for i in range(10):  # 10 luggage tugs as example
             "depart": i * 10,
             "route": route
         })
+    else:
+        print(f"⚠️ No valid route from {from_edge} to {to_edge}")
 
+# Write routes to XML
 def write_routes_to_xml(vehicles, filename="generated_routes.xml"):
     with open(filename, "w") as f:
         f.write('<routes>\n')
@@ -48,3 +62,7 @@ def write_routes_to_xml(vehicles, filename="generated_routes.xml"):
             f.write(f'  <vehicle id="{v["id"]}" type="{v["type"]}" depart="{v["depart"]}" route="{route_id}"/>\n')
         
         f.write('</routes>\n')
+    print(f"✅ Wrote {len(vehicles)} vehicles to {filename}")
+
+# Run the writer
+write_routes_to_xml(vehicles)
