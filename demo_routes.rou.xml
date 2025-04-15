@@ -1,0 +1,9 @@
+<routes>
+<vType id="gse" accel="1" decel="4" maxSpeed="10" length="3"/>
+<route id="route_gse_6" edges="91658183#4 -91658183#4 -91658184 91658197#1 91658197#2 -679523227#3 91658186#0 91658186#1 91658186#2 91658181#1 E16 E17"/>
+<vehicle id="gse_6" type="gse" depart="60" route="route_gse_6"/>
+<route id="route_gse_7" edges="91658183#4 -91658183#4 -91658184 91658197#1 91658197#2 -679523227#3 91658186#0 91658186#1 91658186#2 91658181#1 E18"/>
+<vehicle id="gse_7" type="gse" depart="70" route="route_gse_7"/>
+<route id="route_gse_14" edges="91658183#4 -91658183#4 -91658184 91658197#1 91658197#2 -679523227#3 91658186#0 91658186#1 91658186#2 91658181#1 E16"/>
+<vehicle id="gse_14" type="gse" depart="140" route="route_gse_14"/>
+</routes>
